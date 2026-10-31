@@ -1,0 +1,75 @@
+CITISEVIK — EMERGENT HANDOFF
+================================
+
+VISION
+CitiSevik is an urban infrastructure coordination and sustainability decision-support platform for municipal authorities. It connects citizen grievances, infrastructure project schedules, environmental and service-risk indicators, departmental responsibilities, intervention options and outcome tracking. It is intended to complement existing municipal grievance portals, GIS systems and ICCCs — not replace them.
+
+CORE WORKFLOW
+1. A citizen report or project update enters the system.
+2. CitiSevik locates it on the map and checks nearby complaints, projects, work schedules, road/utility context and environmental screening indicators.
+3. It flags potential work clashes and complaint hotspots on the main map.
+4. It recommends a lead department, partner departments, urgency, immediate safety action, durable intervention and verification measures.
+5. Municipal officers review and approve recommendations.
+6. The system tracks assignment, interdepartmental coordination, completion and repeat complaints/outcomes.
+
+WHAT THE CURRENT HTML DEMO CONTAINS
+- Standalone single-file HTML prototype with embedded map dataset for a sample Matunga/Wadala/Sion area.
+- Project placement, project list, impact-radius overlays and timeline fields.
+- Flood, traffic, building-density proxy, air-pressure, complaints and combined priority-area layers.
+- Sample project records and sample grievance records.
+- Session-only citizen issue reporting (not sent to BMC or any authority).
+- Basic project proximity/schedule conflict checks.
+- Complaint clustering / hotspots.
+- Rule-based relative priority screening.
+- Intervention comparisons and an illustrative budget-planning panel.
+- A departmental coordination desk with functional routing suggestions for Roads/Ward Engineering, Storm Water Drains, Water Supply/Sewerage, Traffic, Environment/Solid Waste and Planning/Project Coordination.
+- Issue/severity-based response templates for potholes, waterlogging, blocked drains and construction dust.
+- Main-map radial gradient halos for complaint clusters and potential project clashes.
+- An illustrative department coordination vs completion chart.
+- An implementation audit showing implemented, partial and not-yet-built items.
+
+IMPORTANT LIMITATIONS — DO NOT PRESENT AS LIVE OR VALIDATED
+- The demo data and department performance percentages are illustrative.
+- The budget package costs are placeholders, not verified municipal estimates.
+- The risk score is a screening index, not a validated flood, traffic, pollution or public-health prediction.
+- Building counts are not population counts.
+- The departmental matrix is a functional model, not a verified current BMC/NMMC organisation chart.
+- Road ownership/jurisdiction must be checked for every case.
+- Reports and actions stay in the browser session; there is no backend, login, API integration, notifications or persistence.
+- Conflict alerts based on proximity/time are potential coordination opportunities, not confirmed underground utility clashes.
+- Final decisions require inspection and approval by authorised municipal officers.
+
+WHAT STILL NEEDS TO BE BUILT FOR A REAL PRODUCT
+1. Backend/database with persistent records, user roles, authentication, audit logs and secure file/photo storage.
+2. Verified integrations or import workflows for municipal grievance channels, project registries, utility networks, contractor schedules and department status updates.
+3. Canonical project registry: project ID, owning agency/department, road owner, exact footprint/geometry, start/end, status, contractor, budget, dependencies, utility interfaces, source and last-updated timestamp.
+4. Real departmental workflow: configurable org chart, ward/agency jurisdiction, lead/partner ownership, SLA/escalation rules, hand-off acknowledgement and completion sign-off.
+5. Geospatial analysis using actual road segments, utility alignments, project footprints and time windows; distinguish confirmed conflict, likely conflict and coordination opportunity.
+6. Complaint deduplication, geocoding, hotspot clustering, severity and repeat-complaint analytics.
+7. Calibrated flood model using rainfall, terrain, drainage capacity, catchment, outfall/tide effects, blockage and field observations. Do not infer flood outcomes from elevation alone.
+8. Validated traffic, air-quality and social-impact models with provenance, confidence intervals and clear uncertainty.
+9. Real cost library, lifecycle maintenance costs and budget optimisation constrained by engineering feasibility and procurement rules.
+10. Outcome tracking: time to acknowledge, inspect, coordinate, repair and close; repeat complaint rate; recurrence after rainfall; repeat excavation avoided; cost/time saved.
+11. Data governance: source, timestamp, confidence, update owner, permissions, privacy and retention rules.
+12. Pilot with one ward and compare baseline vs after implementation.
+
+DEPARTMENT ROUTING MODEL (CONFIGURABLE)
+- Roads / Ward Engineering: potholes, road defects, resurfacing, road safety.
+- Storm Water Drains: waterlogging, drain blockage/capacity, outfalls.
+- Water Supply / Sewerage: leaks, sewer defects, underground utility schedules.
+- Traffic Police / Traffic Engineering: diversions, road closures, emergency/pedestrian access.
+- Environment / Solid Waste: construction dust, debris, site compliance.
+- Planning / Project Coordination: capital works register, schedules, dependencies, budget coordination.
+This is a proposed functional mapping; actual agency names, ownership and authority must be verified locally.
+
+DESIGN / PRODUCT PRINCIPLES
+- Main map remains the centrepiece. Use subtle radial gradient halos to highlight complaint clusters and work-clash areas; retain separate symbols for individual complaints and project footprints.
+- Legend must distinguish: individual complaint, complaint cluster, potential clash, confirmed clash, project site and estimated influence zone.
+- Use readable cards with four clear sections: What we know; Why it matters; Recommended action; Who should act / who must coordinate.
+- Always label values as observed, imported, modelled, estimated or illustrative.
+- Show confidence and missing data. Never imply a model is validated when it is not.
+- Do not auto-issue work orders. Keep a human approval step.
+- Design for low-bandwidth, desktop-first municipal operations and mobile-friendly citizen reporting.
+
+REQUEST TO EMERGENT
+Please use the attached CitiSevik_integrated_upgrade.html as the current visual/functional baseline. First inspect the existing code and preserve its map data, project workflows and current working interactions. Then refactor into a maintainable full-stack application without removing the prototype's capabilities. Implement the remaining items above in phases, starting with a polished responsive UI, persistent data model, configurable departmental workflow, map-based complaint/clash overlays and an explainable response engine. Use mock data only where live integrations are unavailable, and mark every mock value clearly. Do not fabricate real municipal statistics or claim integrations that do not exist. Provide a clear implementation checklist and identify which features are prototype-only, which are connected to live data, and which require municipal partnership.

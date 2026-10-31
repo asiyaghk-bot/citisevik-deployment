@@ -1,0 +1,7 @@
+{
+  "product": "CitiSevik",
+  "design_intent": "Clean, government-readable, uncluttered municipal decision support",
+  "fonts": {"headings": "IBM Plex Sans", "body": "DM Sans", "ids_and_data": "IBM Plex Mono"},
+  "colors": {"topbar_navy": "#0f2a3a", "sidebar": "#13232d", "teal_accent": "#0f6b8a", "page_background": "#eef3f5", "ink": "#182b35", "muted": "#647782", "line": "#d8e2e6", "warning": "#c88635", "danger": "#bd5148", "success": "#21836d"},
+  "principles": ["Keep the map central", "Use subtle radial halos for complaint clusters and potential clashes", "Distinguish potential from confirmed conflicts", "Label every value by provenance", "Human approval before work orders", "Avoid dense dashboards and excessive decoration", "Responsive desktop-first municipal workflow"]
+}

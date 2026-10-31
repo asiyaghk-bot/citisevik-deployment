@@ -1,0 +1,13 @@
+CitiSevik quick deployment (Render)
+
+IMPORTANT: This is an illustrative prototype. Do not enter real citizen personal data. SQLite storage on a free ephemeral instance may reset/restart; this is a demo link, not production hosting.
+
+1. Create/sign in to GitHub: https://github.com
+2. Create a NEW PRIVATE repository named citisevik-demo.
+3. Upload the CONTENTS of this folder (the CitiSevik folder), not the ZIP itself. Use Add file > Upload files; drag all files/folders from the extracted folder. Commit.
+4. Open https://render.com and sign in with GitHub.
+5. New + > Blueprint. Select the citisevik-demo repository. Render detects render.yaml. Apply.
+6. Wait for deploy to finish. Open the generated *.onrender.com URL. Test that the homepage loads and /api/health returns successfully (if health endpoint exists; otherwise use /api/docs).
+7. Paste the URL into Prototype/Demo Link. Website/product link can stay blank.
+
+If Blueprint is unavailable: New + > Web Service; connect repository; Runtime Python; Build command: pip install -r app/backend/requirements.txt; Start command: uvicorn app.backend.main:app --host 0.0.0.0 --port $PORT; deploy.
