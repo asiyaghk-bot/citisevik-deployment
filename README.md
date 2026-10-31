@@ -3,7 +3,7 @@
 ### A prototype for better urban infrastructure coordination
 
 **Live Demo:** [Explore CitiSevik](https://citisevik-deployment.onrender.com/)
-
+**User Manual: ** .[https://github.com/asiyaghk-bot/citisevik-deployment/blob/main/CitiSevik_Demo_User_Manual.pdf]
 CitiSevik is a prototype platform that explores how cities can coordinate civic complaints, infrastructure work and environmental concerns more effectively.
 
 In a city, different departments often work on issues that are connected to one another. A road repair, a drainage complaint and an ongoing infrastructure project may all affect the same area. When these activities are considered separately, it can lead to repeated work, unnecessary disruption and inefficient use of resources.
