@@ -1,38 +1,90 @@
-# CitiSevik — revised working prototype
+# CitiSevik
 
-A self-contained municipal infrastructure decision-support prototype built with **FastAPI + SQLite + vanilla HTML/CSS/JS**. It runs locally and does not require Emergent credits, paid APIs or a cloud database.
+### A prototype for better urban infrastructure coordination
 
-## Run locally
+**Live Demo:** [Explore CitiSevik](https://citisevik-deployment.onrender.com/)
 
-1. Install Python 3.10+.
-2. Double-click `Run_CitiSevik_Windows.bat` (Windows), or run the Mac/Linux shell script.
-3. Open `http://127.0.0.1:8000`.
+CitiSevik is a prototype platform that explores how cities can coordinate civic complaints, infrastructure work and environmental concerns more effectively.
 
-The first launch installs the small Python dependencies, creates SQLite and seeds the sample project / complaint records. API documentation: `http://127.0.0.1:8000/docs`.
+In a city, different departments often work on issues that are connected to one another. A road repair, a drainage complaint and an ongoing infrastructure project may all affect the same area. When these activities are considered separately, it can lead to repeated work, unnecessary disruption and inefficient use of resources.
 
-## What changed in this revision
+CitiSevik brings these different pieces of information into one place to help make those connections easier to identify.
 
-- **Avoided-rework comparison:** illustrative ₹68 lakh separate works vs ₹62 lakh coordinated package, showing ₹6 lakh potential avoided rework. Uncoordinated drainage after resurfacing is marked High repeat-excavation risk.
-- **Option-specific rationales and score breakdowns:** drainage, road repair, green/blue retention and combined package each show their own drivers.
-- **Priority explanation:** ranked areas show rank, percentile, overall score and component drivers. Compare preselects the top-ranked area; selecting another area highlights its grid cell on the map.
-- **Workflow guards:** start requires acknowledgement; resolve requires work in progress; verify requires resolved status. Case lists can be sorted high-to-low / low-to-high urgency, newest or oldest.
-- **More infrastructure context:** seeded water-pipeline replacement project creates another utility coordination example.
-- **Outcome measures:** potential conflicts flagged vs manually verified, repeat complaints after a recorded fix, and average days to acknowledge. Empty measures are shown as zero / unavailable with a caveat, not as proof of success.
-- **Citizen view:** citizens see only a report form and status tracking. A submitted report returns a reference and private tracking code; the status endpoint requires both. Staff views are hidden from the citizen interface and staff endpoints reject the citizen role.
-- **Public-location alignment check:** 1 of 3 approximate public locality references (Matunga, Sion, Wadala) is within 500 m of one of the ten highest flood-screening cells. This is a coarse exploratory location-alignment check, not predictive validation; the source articles do not supply exact point coordinates.
-- **90-second guided demo:** a five-step presenter walkthrough for road repair, drainage / pipeline coordination, complaint cluster, response suggestions and intervention comparison.
-- Renamed “Smart Municipal Response Engine” to **Rule-based response suggestions**.
-- Global case studies retain Singapore and Copenhagen and add a Mumbai example (Hindmata / King's Circle holding and pumping measures) for local comparison.
+## Dashboard Preview
+<img width="1365" height="607" alt="image" src="https://github.com/user-attachments/assets/4417afdd-92f7-4344-a313-56a15c471153" />
+<img width="1091" height="580" alt="image" src="https://github.com/user-attachments/assets/2c57848a-3359-41c2-adb3-bab2343ebf29" />
+<img width="1366" height="599" alt="image" src="https://github.com/user-attachments/assets/1b0db338-b747-48df-9f6d-e2e576ee609b" />
 
-## Prototype data and honest limitations
 
-- The map includes the supplied 208-cell / 3,558-road dataset, water geometry and modelled screening indices.
-- Seeded projects and complaints are illustrative; citizen-entered demo reports are stored locally.
-- Flood, air and density metrics are screening proxies, not validated predictions.
-- Project clashes are potential proximity / schedule alerts until checked against utility records and site conditions.
-- ₹68L vs ₹62L is a scenario assumption, not measured savings or a municipal estimate. Other intervention costs are placeholders.
-- The public-location check uses approximate locality centroids and coarse grid cells. It is not a formal validation study.
-- **Role handling is prototype-level:** citizen UI restrictions, endpoint role checks and report tracking codes are implemented, but the role selector is not a real identity provider. Do not deploy publicly or store real personal data. Production use needs authenticated accounts, secure sessions, ownership checks, audit controls and municipal approval.
+
+## What does it do?
+
+The prototype brings together four main areas:
+
+- **Civic complaints:** View reported urban issues and understand their location and context.
+- **Infrastructure projects:** Explore ongoing or proposed infrastructure work.
+- **Environmental context:** Consider local environmental risks while assessing urban issues.
+- **Municipal coordination:** Suggest relevant departments, possible actions and verification steps based on the available information.
+
+It also includes a planning component that explores how different infrastructure interventions can be compared using estimated costs, potential benefits and local conditions.
+
+## Exploring the demo
+
+The easiest way to understand CitiSevik is to explore it as a municipal planning and coordination tool.
+
+1. **Explore the urban information:** Look through the available civic issues, infrastructure projects and environmental context.
+2. **Understand the connections:** See how issues in the same area may overlap with existing projects or other urban concerns.
+3. **Review suggested responses:** Explore recommendations for responsible departments, coordinated actions and verification.
+4. **Compare interventions:** Consider different infrastructure approaches using the planning information available in the prototype.
+
+**Try it here:** [https://citisevik-deployment.onrender.com/](https://citisevik-deployment.onrender.com/)
+
+## How it is built
+
+CitiSevik uses:
+
+- **Python and FastAPI** for the backend.
+- **HTML, CSS and JavaScript** for the frontend.
+- **JSON-based demo data** to represent civic and infrastructure information.
+
+## Running locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/asiyaghk-bot/citisevik-deployment.git
+cd citisevik-deployment
+```
+
+Move into the application directory:
+
+```bash
+cd app
+```
+
+Install the dependencies:
+
+```bash
+pip install -r backend/requirements.txt
+```
+
+Start the application:
+
+```bash
+uvicorn backend.main:app --reload
+```
+
+## Scope and limitations
+
+CitiSevik is currently a working prototype built to demonstrate the concept and its proposed workflow.
+
+The information shown in the demo is illustrative and uses demo data. The platform is not connected to live municipal databases, official complaint systems or municipal departments. Its recommendations are intended to support human decision-making rather than replace it.
+
+## The idea behind CitiSevik
+
+Cities don't just need more infrastructure. They also need better ways to plan, coordinate and maintain what they already have.
+
+CitiSevik is an exploration of what that coordination could look like.
 - No live BMC/NMMC integration, real notifications, field inspection, verified utility GIS, calibrated flood/traffic models or production deployment.
 - Global case studies are reference examples, not automatic recommendations; local feasibility still needs engineering review.
 
